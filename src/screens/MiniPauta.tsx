@@ -406,9 +406,9 @@ export default function MiniPauta() {
               </thead>
               <tbody>
                 {loading ? (
-                  <tr><td colSpan={todos ? 7 : 6} className="p-8 text-center text-muted-foreground"><Loader2 className="mx-auto h-5 w-5 animate-spin" /></td></tr>
+                  <tr><td colSpan={todos ? 11 : 6} className="p-8 text-center text-muted-foreground"><Loader2 className="mx-auto h-5 w-5 animate-spin" /></td></tr>
                 ) : erroCarga ? (
-                  <tr><td colSpan={todos ? 7 : 6} className="p-8 text-center">
+                  <tr><td colSpan={todos ? 11 : 6} className="p-8 text-center">
                     <p className="font-medium text-destructive">Não foi possível carregar os alunos.</p>
                     <p className="mt-1 text-xs text-muted-foreground">Verifique a internet. Detalhe: {erroCarga}</p>
                     <Button size="sm" variant="outline" className="mt-3" onClick={() => { setVista([]); setTentarDeNovo((n) => n + 1); }}>
@@ -416,7 +416,7 @@ export default function MiniPauta() {
                     </Button>
                   </td></tr>
                 ) : linhas.length === 0 ? (
-                  <tr><td colSpan={todos ? 7 : 6} className="p-8 text-center text-muted-foreground">{classe ? "Não há alunos nesta classe." : "Escolha uma classe para começar."}</td></tr>
+                  <tr><td colSpan={todos ? 11 : 6} className="p-8 text-center text-muted-foreground">{classe ? "Não há alunos nesta classe." : "Escolha uma classe para começar."}</td></tr>
                 ) : linhas.map((l, i) => {
                   const m = media(l);
                   return (

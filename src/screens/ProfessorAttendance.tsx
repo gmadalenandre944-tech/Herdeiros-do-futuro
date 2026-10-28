@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CLASSES_OFICIAIS, TODAS_TURMAS, fetchMatriculasDaVista, filtrarPorClasseTurma, turmasDaClasse, type Matricula } from "@/lib/schoolData";
+import { CLASSES_OFICIAIS, TODAS_TURMAS, classesDaVista, fetchMatriculasDaVista, filtrarPorClasseTurma, turmasDaClasse, type Matricula } from "@/lib/schoolData";
+
 import { db as dbFrom } from "@/lib/db";
 import { useAuth } from "@/hooks/useAuth";
 import RoleLayout from "@/components/RoleLayout";
@@ -30,6 +31,19 @@ export default function ProfessorAttendance() {
   const [letra, setLetra] = useState(TODAS_TURMAS);
   const [gravando, setGravando] = useState(false);
   const [data, setData] = useState(today());
+
+  // Classes reais lidas de `alunos_ordenados` (vista vw_alunos_ordenados).
+  const classesExistentes = useMemo(() => (vista.length ? classesDaVista(vista) : [...CLASSES_OFICIAIS]), [vista]);
+
+  // Carrega os alunos ao abrir, para listar as classes que realmente existem.
+  useEffect(() => {
+    let activo = true;
+    fetchMatriculasDaVista()
+      .then((todos) => { if (activo) setVista(todos); })
+      .catch(() => { if (activo) setVista([]); });
+    return () => { activo = false; };
+  }, []);
+
   
   // Lista de alunos inseridos manualmente
   const [alunos, setAlunos] = useState<AlunoFrequencia[]>([
