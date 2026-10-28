@@ -5,6 +5,15 @@ import AppFooter from "./AppFooter";
 import HFLogo from "./HFLogo";
 import { useRealtimeNotifications } from "@/hooks/useRealtimeNotifications";
 import { useAutoVinculo } from "@/hooks/useAutoVinculo";
+import { useAuth } from "@/hooks/useAuth";
+
+/** Nome mostrado no topo: o guardado quando a conta foi criada; senão o e-mail. */
+const nomeNoTopo = (user: { user_metadata?: unknown; email?: string } | null) => {
+  const meta = user?.user_metadata as Record<string, unknown> | undefined;
+  const nome = typeof meta?.nome === "string" ? meta.nome.trim() : "";
+  return nome || user?.email || "";
+};
+
 
 
 interface RoleLayoutProps {
@@ -17,7 +26,9 @@ interface RoleLayoutProps {
 
 const RoleLayout = ({ children, title, subtitle, headerLabel, navItems }: RoleLayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { user } = useAuth();
   useRealtimeNotifications();
+
   useAutoVinculo();
 
   return (
