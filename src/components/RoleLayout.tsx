@@ -45,10 +45,17 @@ const RoleLayout = ({ children, title, subtitle, headerLabel, navItems }: RoleLa
             <p className="text-[10px] uppercase tracking-[0.17em] text-muted-foreground leading-none mb-1">Herdeiros do Futuro</p>
             <h1 className="font-semibold text-sm text-foreground truncate">{headerLabel}</h1>
           </div>
+          {nomeNoTopo(user) && (
+            <div className="hidden md:flex flex-col items-end ml-auto mr-4 leading-tight">
+              <span className="text-xs font-semibold text-foreground truncate max-w-48">{nomeNoTopo(user)}</span>
+              <span className="text-[10px] uppercase tracking-wider text-muted-foreground">{title}</span>
+            </div>
+          )}
           <div className="hidden sm:flex items-center gap-2 ml-auto text-xs text-muted-foreground">
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
             Sistema operacional
           </div>
+
         </header>
 
 

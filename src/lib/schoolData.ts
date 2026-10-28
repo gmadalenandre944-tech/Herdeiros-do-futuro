@@ -216,6 +216,21 @@ export const TURMAS_FIXAS: Record<string, string[]> = {
   "6ª Classe": ["A", "B"],
 };
 
+/** Classes que realmente existem nos alunos lidos de `alunos_ordenados` (vista vw_alunos_ordenados),
+ *  na ordem oficial (Iniciação → 9ª); classes fora da lista oficial vão para o fim. */
+export const classesDaVista = (alunos: { classe?: unknown }[]) => {
+  const ordem = CLASSES_OFICIAIS as readonly string[];
+  const presentes = [...new Set(alunos.map((a) => normalizeClasseOficial(a.classe)).filter(Boolean))];
+  return presentes.sort((a, b) => {
+    const ia = ordem.indexOf(a), ib = ordem.indexOf(b);
+    if (ia >= 0 && ib >= 0) return ia - ib;
+    if (ia >= 0) return -1;
+    if (ib >= 0) return 1;
+    return a.localeCompare(b, "pt");
+  });
+};
+
+
 export const turmasDaClasse = (alunos: { classe?: unknown; turma?: unknown }[], classe: string) =>
   [...new Set([
     ...(TURMAS_FIXAS[classe] ?? []),
