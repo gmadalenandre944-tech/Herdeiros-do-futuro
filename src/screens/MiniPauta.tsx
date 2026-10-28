@@ -395,7 +395,8 @@ export default function MiniPauta() {
                 <tr className="bg-secondary/60 text-muted-foreground">
                   <th className="w-12 px-3 py-2 text-left">Nº</th>
                   <th className="px-3 py-2 text-left">Nome do Aluno</th>
-                  {todos ? <>{TRIMESTRES.map((t) => <><th key={`m${t}`} className="w-14 px-1 py-2 text-center">MAC {t}ºT</th><th key={`n${t}`} className="w-14 px-1 py-2 text-center">NPT {t}ºT</th><th key={`mt${t}`} className="w-14 px-2 py-2 text-center">MT {t}ºT</th></>)}<th className="w-20 px-2 py-2 text-center">MF</th></> : <>
+                  {todos ? <>{TRIMESTRES.map((t) => <Fragment key={t}><th className="w-14 px-1 py-2 text-center">MAC {t}ºT</th><th className="w-14 px-1 py-2 text-center">NPT {t}ºT</th><th className="w-14 px-2 py-2 text-center">MT {t}ºT</th></Fragment>)}<th className="w-20 px-2 py-2 text-center">MF</th></> : <>
+
 
                   <th className="w-20 px-2 py-2 text-center">MAC</th>
                   <th className="w-20 px-2 py-2 text-center">NPT</th>
@@ -422,11 +423,12 @@ export default function MiniPauta() {
                     <tr key={l.alunoId} className="border-t border-border/60 odd:bg-background even:bg-secondary/20">
                       <td className="px-3 py-1.5 font-mono text-muted-foreground">{String(i + 1).padStart(2, "0")}</td>
                       <td className="px-3 py-1.5 font-medium text-foreground">{l.nome}</td>
-                      {todos && TRIMESTRES.map((t) => { const v = mtDe(l.t?.[t]); return <>
-                        <td key={t + "ma"} className="px-1 py-1.5"><Input inputMode="decimal" value={l.t?.[t]?.mac ?? ""} onChange={(e) => editarTres(i, t, "mac", e.target.value)} className="h-8 text-center" /></td>
-                        <td key={t + "np"} className="px-1 py-1.5"><Input inputMode="decimal" value={l.t?.[t]?.npt ?? ""} onChange={(e) => editarTres(i, t, "npt", e.target.value)} className="h-8 text-center" /></td>
-                        <td key={t + "mt"} className={`px-2 py-1.5 text-center ${corNota(v, minimo)}`}>{v === null ? "—" : v.toFixed(1)}</td>
-                      </>; })}
+                      {todos && TRIMESTRES.map((t) => { const v = mtDe(l.t?.[t]); return <Fragment key={t}>
+                        <td className="px-1 py-1.5"><Input inputMode="decimal" value={l.t?.[t]?.mac ?? ""} onChange={(e) => editarTres(i, t, "mac", e.target.value)} className="h-8 text-center" /></td>
+                        <td className="px-1 py-1.5"><Input inputMode="decimal" value={l.t?.[t]?.npt ?? ""} onChange={(e) => editarTres(i, t, "npt", e.target.value)} className="h-8 text-center" /></td>
+                        <td className={`px-2 py-1.5 text-center ${corNota(v, minimo)}`}>{v === null ? "—" : v.toFixed(1)}</td>
+                      </Fragment>; })}
+
 
                       {!todos && (["mac", "npt"] as const).map((c) => (
                         <td key={c} className="px-2 py-1.5">
