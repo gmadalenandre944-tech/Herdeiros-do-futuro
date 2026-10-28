@@ -4,10 +4,10 @@ import Documentos from "@/screens/Documentos";
 
 export const Route = createFileRoute("/documentos")({
   head: () => ({ meta: [
-    { title: "Documentos | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Documentos." },
-    { property: "og:title", content: "Documentos | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Documentos." },
+    { title: "Documentos | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Documentos." },
+    { property: "og:title", content: "Documentos | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Documentos." },
   ] }),
   component: Page,
 });

@@ -4,10 +4,10 @@ import SecretarioDocRequests from "@/screens/SecretarioDocRequests";
 
 export const Route = createFileRoute("/secretario/doc-requests")({
   head: () => ({ meta: [
-    { title: "Secretario · Doc Requests | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Secretario · Doc Requests." },
-    { property: "og:title", content: "Secretario · Doc Requests | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Secretario · Doc Requests." },
+    { title: "Secretario · Doc Requests | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Secretario · Doc Requests." },
+    { property: "og:title", content: "Secretario · Doc Requests | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Secretario · Doc Requests." },
   ] }),
   component: Page,
 });

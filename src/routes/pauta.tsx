@@ -4,10 +4,10 @@ import MiniPauta from "@/screens/MiniPauta";
 
 export const Route = createFileRoute("/pauta")({
   head: () => ({ meta: [
-    { title: "Pauta | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Pauta." },
-    { property: "og:title", content: "Pauta | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Pauta." },
+    { title: "Pauta | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Pauta." },
+    { property: "og:title", content: "Pauta | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Pauta." },
   ] }),
   component: Page,
 });

@@ -88,17 +88,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Future Roots | Plataforma Escolar" },
+      { title: "Herdeiros do Futuro | Plataforma Escolar" },
       {
         name: "description",
         content:
-          "Plataforma escolar Future Roots: matrículas, pautas, notas, pagamentos e comunicação.",
+          "Plataforma escolar Herdeiros do Futuro: matrículas, pautas, notas, pagamentos e comunicação.",
       },
-      { property: "og:title", content: "Future Roots | Plataforma Escolar" },
+      { property: "og:title", content: "Herdeiros do Futuro | Plataforma Escolar" },
       {
         property: "og:description",
         content:
-          "Plataforma escolar Future Roots: matrículas, pautas, notas, pagamentos e comunicação.",
+          "Plataforma escolar Herdeiros do Futuro: matrículas, pautas, notas, pagamentos e comunicação.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

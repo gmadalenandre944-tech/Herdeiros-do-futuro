@@ -4,10 +4,10 @@ import BaseDados from "@/screens/BaseDados";
 
 export const Route = createFileRoute("/base-dados")({
   head: () => ({ meta: [
-    { title: "Base Dados | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Base Dados." },
-    { property: "og:title", content: "Base Dados | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Base Dados." },
+    { title: "Base Dados | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Base Dados." },
+    { property: "og:title", content: "Base Dados | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Base Dados." },
   ] }),
   component: Page,
 });

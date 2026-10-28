@@ -4,10 +4,10 @@ import AdminAnnouncements from "@/screens/AdminAnnouncements";
 
 export const Route = createFileRoute("/admin/announcements")({
   head: () => ({ meta: [
-    { title: "Admin · Announcements | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Admin · Announcements." },
-    { property: "og:title", content: "Admin · Announcements | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Admin · Announcements." },
+    { title: "Admin · Announcements | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Admin · Announcements." },
+    { property: "og:title", content: "Admin · Announcements | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Admin · Announcements." },
   ] }),
   component: Page,
 });

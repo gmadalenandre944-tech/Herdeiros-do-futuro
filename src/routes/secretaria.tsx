@@ -4,10 +4,10 @@ import SecretarioDashboard from "@/screens/SecretarioDashboard";
 
 export const Route = createFileRoute("/secretaria")({
   head: () => ({ meta: [
-    { title: "Secretaria | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Secretaria." },
-    { property: "og:title", content: "Secretaria | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Secretaria." },
+    { title: "Secretaria | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Secretaria." },
+    { property: "og:title", content: "Secretaria | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Secretaria." },
   ] }),
   component: Page,
 });

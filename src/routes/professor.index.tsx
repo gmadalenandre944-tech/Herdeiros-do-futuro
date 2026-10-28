@@ -4,10 +4,10 @@ import ProfessorDashboard from "@/screens/ProfessorDashboard";
 
 export const Route = createFileRoute("/professor/")({
   head: () => ({ meta: [
-    { title: "Professor | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Professor." },
-    { property: "og:title", content: "Professor | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Professor." },
+    { title: "Professor | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Professor." },
+    { property: "og:title", content: "Professor | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Professor." },
   ] }),
   component: Page,
 });

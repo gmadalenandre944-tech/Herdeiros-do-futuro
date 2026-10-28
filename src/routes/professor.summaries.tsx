@@ -4,10 +4,10 @@ import ProfessorSummaries from "@/screens/ProfessorSummaries";
 
 export const Route = createFileRoute("/professor/summaries")({
   head: () => ({ meta: [
-    { title: "Professor · Summaries | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Professor · Summaries." },
-    { property: "og:title", content: "Professor · Summaries | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Professor · Summaries." },
+    { title: "Professor · Summaries | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Professor · Summaries." },
+    { property: "og:title", content: "Professor · Summaries | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Professor · Summaries." },
   ] }),
   component: Page,
 });

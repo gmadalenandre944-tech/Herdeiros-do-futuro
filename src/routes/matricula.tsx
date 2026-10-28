@@ -4,10 +4,10 @@ import Matricula from "@/screens/Matricula";
 
 export const Route = createFileRoute("/matricula")({
   head: () => ({ meta: [
-    { title: "Matricula | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Matricula." },
-    { property: "og:title", content: "Matricula | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Matricula." },
+    { title: "Matricula | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Matricula." },
+    { property: "og:title", content: "Matricula | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Matricula." },
   ] }),
   component: Page,
 });

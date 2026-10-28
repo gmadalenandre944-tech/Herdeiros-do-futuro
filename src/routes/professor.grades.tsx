@@ -4,10 +4,10 @@ import ProfessorGrades from "@/screens/ProfessorGrades";
 
 export const Route = createFileRoute("/professor/grades")({
   head: () => ({ meta: [
-    { title: "Professor · Grades | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Professor · Grades." },
-    { property: "og:title", content: "Professor · Grades | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Professor · Grades." },
+    { title: "Professor · Grades | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Professor · Grades." },
+    { property: "og:title", content: "Professor · Grades | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Professor · Grades." },
   ] }),
   component: Page,
 });

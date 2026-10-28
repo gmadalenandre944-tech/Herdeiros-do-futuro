@@ -58,7 +58,7 @@ const uid = () => Math.random().toString(36).slice(2, 10);
 
 export default function AdminPautaGeral() {
   return (
-    <RoleLayout title="Future Roots" subtitle="Pauta Geral" headerLabel="Pauta Geral" navItems={adminNav}>
+    <RoleLayout title="Herdeiros do Futuro" subtitle="Pauta Geral" headerLabel="Pauta Geral" navItems={adminNav}>
       <PautaCalculavel />
     </RoleLayout>
   );

@@ -219,7 +219,7 @@ const Signup = () => {
         <div className="w-full max-w-3xl animate-rise-in">
         <div className="mb-6 text-center">
           <HFLogo size="lg" className="mx-auto" />
-          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">Future Roots</p>
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">Herdeiros do Futuro</p>
           <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground">Crie o seu acesso ao portal</h1>
           <p className="mt-1 text-sm text-muted-foreground">Registe os seus dados para acompanhar a vida escolar.</p>
         </div>

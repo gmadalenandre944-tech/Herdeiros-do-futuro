@@ -4,10 +4,10 @@ import SecretarioPayments from "@/screens/SecretarioPayments";
 
 export const Route = createFileRoute("/secretario/payments")({
   head: () => ({ meta: [
-    { title: "Secretario · Payments | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Secretario · Payments." },
-    { property: "og:title", content: "Secretario · Payments | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Secretario · Payments." },
+    { title: "Secretario · Payments | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Secretario · Payments." },
+    { property: "og:title", content: "Secretario · Payments | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Secretario · Payments." },
   ] }),
   component: Page,
 });

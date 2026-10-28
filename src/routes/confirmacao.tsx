@@ -4,10 +4,10 @@ import Confirmacao from "@/screens/Confirmacao";
 
 export const Route = createFileRoute("/confirmacao")({
   head: () => ({ meta: [
-    { title: "Confirmacao | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Confirmacao." },
-    { property: "og:title", content: "Confirmacao | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Confirmacao." },
+    { title: "Confirmacao | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Confirmacao." },
+    { property: "og:title", content: "Confirmacao | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Confirmacao." },
   ] }),
   component: Page,
 });

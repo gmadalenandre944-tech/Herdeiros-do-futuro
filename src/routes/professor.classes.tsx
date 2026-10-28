@@ -4,10 +4,10 @@ import ProfessorClasses from "@/screens/ProfessorClasses";
 
 export const Route = createFileRoute("/professor/classes")({
   head: () => ({ meta: [
-    { title: "Professor · Classes | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Professor · Classes." },
-    { property: "og:title", content: "Professor · Classes | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Professor · Classes." },
+    { title: "Professor · Classes | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Professor · Classes." },
+    { property: "og:title", content: "Professor · Classes | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Professor · Classes." },
   ] }),
   component: Page,
 });

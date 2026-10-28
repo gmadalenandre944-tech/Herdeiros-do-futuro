@@ -4,10 +4,10 @@ import AdminPautaGeral from "@/screens/AdminPautaGeral";
 
 export const Route = createFileRoute("/admin/pauta-geral")({
   head: () => ({ meta: [
-    { title: "Admin · Pauta Geral | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Admin · Pauta Geral." },
-    { property: "og:title", content: "Admin · Pauta Geral | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Admin · Pauta Geral." },
+    { title: "Admin · Pauta Geral | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Admin · Pauta Geral." },
+    { property: "og:title", content: "Admin · Pauta Geral | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Admin · Pauta Geral." },
   ] }),
   component: Page,
 });

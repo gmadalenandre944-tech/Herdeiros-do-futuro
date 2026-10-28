@@ -4,10 +4,10 @@ import SecretarioEnrollment from "@/screens/SecretarioEnrollment";
 
 export const Route = createFileRoute("/secretario/enrollment")({
   head: () => ({ meta: [
-    { title: "Secretario · Enrollment | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Secretario · Enrollment." },
-    { property: "og:title", content: "Secretario · Enrollment | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Secretario · Enrollment." },
+    { title: "Secretario · Enrollment | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Secretario · Enrollment." },
+    { property: "og:title", content: "Secretario · Enrollment | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Secretario · Enrollment." },
   ] }),
   component: Page,
 });

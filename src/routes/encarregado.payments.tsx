@@ -4,10 +4,10 @@ import EncarregadoPayments from "@/screens/EncarregadoPayments";
 
 export const Route = createFileRoute("/encarregado/payments")({
   head: () => ({ meta: [
-    { title: "Encarregado · Payments | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Encarregado · Payments." },
-    { property: "og:title", content: "Encarregado · Payments | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Encarregado · Payments." },
+    { title: "Encarregado · Payments | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Encarregado · Payments." },
+    { property: "og:title", content: "Encarregado · Payments | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Encarregado · Payments." },
   ] }),
   component: Page,
 });

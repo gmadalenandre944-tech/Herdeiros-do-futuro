@@ -4,10 +4,10 @@ import AlunoSchedules from "@/screens/AlunoSchedules";
 
 export const Route = createFileRoute("/aluno/schedules")({
   head: () => ({ meta: [
-    { title: "Aluno · Schedules | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Aluno · Schedules." },
-    { property: "og:title", content: "Aluno · Schedules | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Aluno · Schedules." },
+    { title: "Aluno · Schedules | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Aluno · Schedules." },
+    { property: "og:title", content: "Aluno · Schedules | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Aluno · Schedules." },
   ] }),
   component: Page,
 });

@@ -4,10 +4,10 @@ import Dashboard from "@/screens/Dashboard";
 
 export const Route = createFileRoute("/admin/")({
   head: () => ({ meta: [
-    { title: "Admin | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Admin." },
-    { property: "og:title", content: "Admin | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Admin." },
+    { title: "Admin | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Admin." },
+    { property: "og:title", content: "Admin | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Admin." },
   ] }),
   component: Page,
 });

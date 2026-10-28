@@ -4,10 +4,10 @@ import EncarregadoStudents from "@/screens/EncarregadoStudents";
 
 export const Route = createFileRoute("/encarregado/students")({
   head: () => ({ meta: [
-    { title: "Encarregado · Students | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Encarregado · Students." },
-    { property: "og:title", content: "Encarregado · Students | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Encarregado · Students." },
+    { title: "Encarregado · Students | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Encarregado · Students." },
+    { property: "og:title", content: "Encarregado · Students | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Encarregado · Students." },
   ] }),
   component: Page,
 });

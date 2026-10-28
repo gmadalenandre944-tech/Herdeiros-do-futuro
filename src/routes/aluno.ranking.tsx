@@ -4,10 +4,10 @@ import AlunoRanking from "@/screens/AlunoRanking";
 
 export const Route = createFileRoute("/aluno/ranking")({
   head: () => ({ meta: [
-    { title: "Aluno · Ranking | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Aluno · Ranking." },
-    { property: "og:title", content: "Aluno · Ranking | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Aluno · Ranking." },
+    { title: "Aluno · Ranking | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Aluno · Ranking." },
+    { property: "og:title", content: "Aluno · Ranking | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Aluno · Ranking." },
   ] }),
   component: Page,
 });

@@ -4,10 +4,10 @@ import SecretariaVirtual from "@/screens/SecretariaVirtual";
 
 export const Route = createFileRoute("/secretaria-virtual")({
   head: () => ({ meta: [
-    { title: "Secretaria Virtual | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Secretaria Virtual." },
-    { property: "og:title", content: "Secretaria Virtual | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Secretaria Virtual." },
+    { title: "Secretaria Virtual | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Secretaria Virtual." },
+    { property: "og:title", content: "Secretaria Virtual | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Secretaria Virtual." },
   ] }),
   component: Page,
 });

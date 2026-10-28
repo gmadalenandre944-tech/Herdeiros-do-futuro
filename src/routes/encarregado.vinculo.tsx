@@ -4,10 +4,10 @@ import EncarregadoVinculo from "@/screens/EncarregadoVinculo";
 
 export const Route = createFileRoute("/encarregado/vinculo")({
   head: () => ({ meta: [
-    { title: "Encarregado · Vinculo | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Encarregado · Vinculo." },
-    { property: "og:title", content: "Encarregado · Vinculo | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Encarregado · Vinculo." },
+    { title: "Encarregado · Vinculo | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Encarregado · Vinculo." },
+    { property: "og:title", content: "Encarregado · Vinculo | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Encarregado · Vinculo." },
   ] }),
   component: Page,
 });

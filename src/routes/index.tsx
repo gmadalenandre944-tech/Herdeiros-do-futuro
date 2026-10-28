@@ -4,10 +4,10 @@ import Index from "@/screens/Index";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "Início | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Início." },
-    { property: "og:title", content: "Início | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Início." },
+    { title: "Início | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Início." },
+    { property: "og:title", content: "Início | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Início." },
   ] }),
   component: Page,
 });

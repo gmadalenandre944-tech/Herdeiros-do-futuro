@@ -44,7 +44,7 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
           </button>
           <HFLogo size="sm" className="mr-3" />
           <div>
-            <p className="text-[10px] uppercase tracking-[0.17em] text-muted-foreground leading-none mb-1">Future Roots</p>
+            <p className="text-[10px] uppercase tracking-[0.17em] text-muted-foreground leading-none mb-1">Herdeiros do Futuro</p>
             <h1 className="font-semibold text-sm text-foreground">Painel Administrativo</h1>
           </div>
         </header>

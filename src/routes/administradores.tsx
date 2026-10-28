@@ -4,10 +4,10 @@ import Administradores from "@/screens/Administradores";
 
 export const Route = createFileRoute("/administradores")({
   head: () => ({ meta: [
-    { title: "Administradores | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Administradores." },
-    { property: "og:title", content: "Administradores | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Administradores." },
+    { title: "Administradores | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Administradores." },
+    { property: "og:title", content: "Administradores | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Administradores." },
   ] }),
   component: Page,
 });

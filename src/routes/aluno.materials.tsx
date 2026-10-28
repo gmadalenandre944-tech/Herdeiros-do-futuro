@@ -4,10 +4,10 @@ import AlunoMaterials from "@/screens/AlunoMaterials";
 
 export const Route = createFileRoute("/aluno/materials")({
   head: () => ({ meta: [
-    { title: "Aluno · Materials | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Aluno · Materials." },
-    { property: "og:title", content: "Aluno · Materials | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Aluno · Materials." },
+    { title: "Aluno · Materials | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Aluno · Materials." },
+    { property: "og:title", content: "Aluno · Materials | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Aluno · Materials." },
   ] }),
   component: Page,
 });

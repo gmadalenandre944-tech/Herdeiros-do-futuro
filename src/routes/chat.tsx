@@ -4,10 +4,10 @@ import ChatHub from "@/screens/ChatHub";
 
 export const Route = createFileRoute("/chat")({
   head: () => ({ meta: [
-    { title: "Chat | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Chat." },
-    { property: "og:title", content: "Chat | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Chat." },
+    { title: "Chat | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Chat." },
+    { property: "og:title", content: "Chat | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Chat." },
   ] }),
   component: Page,
 });

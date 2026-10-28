@@ -4,10 +4,10 @@ import AlunoHorarios from "@/screens/AlunoHorarios";
 
 export const Route = createFileRoute("/aluno/horarios")({
   head: () => ({ meta: [
-    { title: "Aluno · Horarios | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Aluno · Horarios." },
-    { property: "og:title", content: "Aluno · Horarios | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Aluno · Horarios." },
+    { title: "Aluno · Horarios | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Aluno · Horarios." },
+    { property: "og:title", content: "Aluno · Horarios | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Aluno · Horarios." },
   ] }),
   component: Page,
 });

@@ -4,10 +4,10 @@ import AdminBankSettings from "@/screens/AdminBankSettings";
 
 export const Route = createFileRoute("/admin/bank")({
   head: () => ({ meta: [
-    { title: "Admin · Bank | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Admin · Bank." },
-    { property: "og:title", content: "Admin · Bank | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Admin · Bank." },
+    { title: "Admin · Bank | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Admin · Bank." },
+    { property: "og:title", content: "Admin · Bank | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Admin · Bank." },
   ] }),
   component: Page,
 });

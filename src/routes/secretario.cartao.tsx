@@ -4,10 +4,10 @@ import SecretarioCartao from "@/screens/SecretarioCartao";
 
 export const Route = createFileRoute("/secretario/cartao")({
   head: () => ({ meta: [
-    { title: "Secretario · Cartao | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Secretario · Cartao." },
-    { property: "og:title", content: "Secretario · Cartao | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Secretario · Cartao." },
+    { title: "Secretario · Cartao | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Secretario · Cartao." },
+    { property: "og:title", content: "Secretario · Cartao | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Secretario · Cartao." },
   ] }),
   component: Page,
 });

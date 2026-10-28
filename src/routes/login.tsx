@@ -4,10 +4,10 @@ import Login from "@/screens/Login";
 
 export const Route = createFileRoute("/login")({
   head: () => ({ meta: [
-    { title: "Login | Future Roots" },
-    { name: "description", content: "Plataforma escolar Future Roots — Login." },
-    { property: "og:title", content: "Login | Future Roots" },
-    { property: "og:description", content: "Plataforma escolar Future Roots — Login." },
+    { title: "Login | Herdeiros do Futuro" },
+    { name: "description", content: "Plataforma escolar Herdeiros do Futuro — Login." },
+    { property: "og:title", content: "Login | Herdeiros do Futuro" },
+    { property: "og:description", content: "Plataforma escolar Herdeiros do Futuro — Login." },
   ] }),
   component: Page,
 });
