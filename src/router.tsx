@@ -3,7 +3,13 @@ import { createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
 export const getRouter = () => {
-  const queryClient = new QueryClient();
+  // Dados recentes são reaproveitados ao mudar de página ou de janela,
+  // em vez de voltar a pedir tudo à base de dados.
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: { staleTime: 60_000, gcTime: 10 * 60_000, refetchOnWindowFocus: false, retry: 0 },
+    },
+  });
 
   const router = createRouter({
     routeTree,
