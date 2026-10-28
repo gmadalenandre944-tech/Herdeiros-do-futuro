@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { ClipboardList, FileSpreadsheet } from "lucide-react";
 import { downloadExcel } from "@/lib/excelExport";
 import { fetchAlunosPresenca, type LinhaListaOficial } from "@/lib/listasOficiais";
-import { CLASSES_OFICIAIS, classeFromTurma, fetchAllStudentRecords, fetchBaseEscolar, normalizeClasseOficial, slugNome } from "@/lib/schoolData";
+import { CLASSES_OFICIAIS, classeFromTurma, classesDaVista, fetchAllStudentRecords, fetchBaseEscolar, normalizeClasseOficial, slugNome } from "@/lib/schoolData";
 
 interface Turma { id: string; nome: string; classe: string; }
 interface Aluno { id: string; nome_completo: string; numero_processo: string; classe: string; turma_id: string | null; }
@@ -147,7 +147,8 @@ const SecretarioLists = () => {
             <div><Label>Classe</Label>
               <Select value={presClasse} onValueChange={setPresClasse}>
                 <SelectTrigger className="mt-2"><SelectValue /></SelectTrigger>
-                <SelectContent><SelectItem value="todas">Todas as classes</SelectItem>{CLASSES_OFICIAIS.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
+                <SelectContent><SelectItem value="todas">Todas as classes</SelectItem>{(presenca.length ? classesDaVista(presenca) : [...CLASSES_OFICIAIS]).map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
+
               </Select>
             </div>
             <div><Label>Mês / período</Label><Input className="mt-2" value={presTitulo} onChange={(e) => setPresTitulo(e.target.value)} placeholder="Ex.: Outubro 2026" /></div>

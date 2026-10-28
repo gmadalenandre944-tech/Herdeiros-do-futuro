@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CLASSES_OFICIAIS, TODAS_TURMAS, classesDaVista, fetchMatriculasDaVista, filtrarPorClasseTurma, turmasDaClasse, type Matricula } from "@/lib/schoolData";
 
@@ -241,7 +241,8 @@ export default function ProfessorAttendance() {
             <Select value={classe} onValueChange={(v) => void carregarClasse(v)}>
               <SelectTrigger><SelectValue placeholder={carregando ? "A carregar..." : "Escolher classe"} /></SelectTrigger>
               <SelectContent>
-                {CLASSES_OFICIAIS.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+                {classesExistentes.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+
               </SelectContent>
             </Select>
           </div>
