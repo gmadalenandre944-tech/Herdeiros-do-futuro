@@ -9,9 +9,10 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Save, Printer, FileDown, Calculator, Loader2, GraduationCap } from "lucide-react";
+import { Save, Printer, FileDown, Calculator, Loader2, GraduationCap, History, Trash2, FolderDown } from "lucide-react";
 import { professorNav } from "@/lib/nav";
-import { ANO_LETIVO_ANTERIOR, CLASSES_OFICIAIS, TODAS_TURMAS, fetchMatriculasDaVista, filtrarPorClasseTurma, turmasDaClasse, type Matricula } from "@/lib/schoolData";
+import { ANO_LETIVO_ANTERIOR, CLASSES_OFICIAIS, TODAS_TURMAS, classesDaVista, fetchMatriculasDaVista, filtrarPorClasseTurma, turmasDaClasse, type Matricula } from "@/lib/schoolData";
+
 import { downloadElementPdf } from "@/lib/elementPdf";
 import { downloadExcel } from "@/lib/excelExport";
 import { disciplinasDaClasse } from "@/lib/officialDocs";
@@ -52,6 +53,22 @@ export default function MiniPauta() {
   const [erroCarga, setErroCarga] = useState<string | null>(null);
   const [tentarDeNovo, setTentarDeNovo] = useState(0);
   const [saving, setSaving] = useState(false);
+  const [historico, setHistorico] = useState<any[]>([]);
+
+  // Classes lidas de `alunos_ordenados` (vista vw_alunos_ordenados), na ordem oficial.
+  const classesExistentes = useMemo(() => (vista.length ? classesDaVista(vista) : [...CLASSES_OFICIAIS]), [vista]);
+
+  // Carrega os alunos uma vez, para listar as classes que realmente existem.
+  useEffect(() => {
+    let activo = true;
+    fetchMatriculasDaVista()
+      .then((todos) => { if (activo) setVista(todos); })
+      .catch(() => { if (activo) setVista([]); });
+    return () => { activo = false; };
+  }, [tentarDeNovo]);
+
+  useEffect(() => { void carregarHistorico(); }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
+
 
   const max = PRIMARIA.includes(classe) ? 10 : 20;
   const minimo = max / 2;
