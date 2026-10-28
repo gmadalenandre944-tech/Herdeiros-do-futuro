@@ -168,36 +168,117 @@ export default function MiniPauta() {
 
 
   const gravar = async () => {
-    if (todos) return toast.error("Para gravar, escolha um trimestre (1º, 2º ou 3º).");
     if (!classe || !disciplina.trim()) return toast.error("Escolha a classe e a disciplina.");
-    const completas = linhas.filter((l) => media(l) !== null);
-    if (!completas.length) return toast.error("Preencha MAC e NPT de pelo menos um aluno.");
+    // No modo "os três trimestres" grava cada trimestre com as notas preenchidas.
+    const alvos: string[] = todos ? TRIMESTRES : [trimestre];
     setSaving(true);
     try {
-      const ids = completas.map((l) => idDb(l.alunoId));
-      const del = await dbFrom("mini_pautas").delete()
-        .eq("classe", classe).eq("disciplina", disciplina.trim()).eq("trimestre", trimestre).in("aluno_id", ids);
-      if (del.error) throw del.error;
-      const { error } = await dbFrom("mini_pautas").insert(completas.map((l) => ({
-        professor_id: user?.id ?? null,
-        classe,
-        turma: turmaNome,
-        disciplina: disciplina.trim(),
-        trimestre,
-        aluno_id: idDb(l.alunoId),
-        av1: num(l.mac),
-        av2: null,
-        pp: num(l.npt),
-        media_final: Number((media(l) as number).toFixed(2)),
-      })));
-      if (error) throw error;
-      toast.success(`Mini pauta gravada: ${completas.length} aluno(s).`);
+      let total = 0; const detalhe: string[] = [];
+      for (const t of alvos) {
+        const completas = linhas.filter((l) => (todos ? completoNoT(l, t) : media(l) !== null));
+        if (!completas.length) continue;
+        const ids = completas.map((l) => idDb(l.alunoId));
+        const del = await dbFrom("mini_pautas").delete()
+          .eq("classe", classe).eq("disciplina", disciplina.trim()).eq("trimestre", t).in("aluno_id", ids);
+        if (del.error) throw del.error;
+        const notasDe = (l: Linha) => todos
+          ? { mac: num(l.t?.[t]?.mac ?? ""), npt: num(l.t?.[t]?.npt ?? ""), media: (mtDe(l.t?.[t]) as number) }
+          : { mac: num(l.mac), npt: num(l.npt), media: (media(l) as number) };
+        const { error } = await dbFrom("mini_pautas").insert(completas.map((l) => {
+          const n = notasDe(l);
+          return {
+            professor_id: user?.id ?? null,
+            classe,
+            turma: turmaNome,
+            disciplina: disciplina.trim(),
+            trimestre: t,
+            aluno_id: idDb(l.alunoId),
+            av1: n.mac,
+            av2: null,
+            pp: n.npt,
+            media_final: Number(n.media.toFixed(2)),
+          };
+        }));
+        if (error) throw error;
+        total += completas.length;
+        detalhe.push(`${t}º T: ${completas.length}`);
+      }
+      if (!total) return toast.error("Preencha MAC e NPT de pelo menos um aluno.");
+      toast.success(`Mini pauta gravada: ${total} aluno(s) — ${detalhe.join(" · ")}.`);
     } catch (e: any) {
       toast.error(`Não foi possível gravar: ${e?.message ?? "erro de ligação"}`);
     } finally {
       setSaving(false);
     }
   };
+
+  // ============ Histórico da mini pauta (como nos boletins) ============
+  const carregarHistorico = async () => {
+    try {
+      if (!user) return;
+      const { data, error } = await dbFrom("mini_pautas_historico").select("*").eq("professor_id", user.id);
+      if (error) throw error;
+      setHistorico(((data ?? []) as any[]).sort((a, b) => String(b.created_at ?? "").localeCompare(String(a.created_at ?? ""))));
+    } catch (e: any) {
+      setHistorico([]);
+      toast.error(`Não foi possível carregar o histórico: ${e?.message ?? "erro de ligação"}`);
+    }
+  };
+
+  const guardarNoHistorico = async () => {
+    if (!classe || !disciplina.trim()) return toast.error("Escolha a classe e a disciplina.");
+    if (!linhas.length) return toast.error("Não há alunos para guardar.");
+    setSaving(true);
+    try {
+      const snapshot = {
+        professor_id: user?.id ?? null,
+        classe,
+        turma: turmaNome,
+        disciplina: disciplina.trim(),
+        trimestre: todos ? "1-3" : trimestre,
+        notas: {
+          turma_letra: turma,
+          linhas: linhas.map((l) => ({ alunoId: l.alunoId, nome: l.nome, processo: l.processo, mac: l.mac, npt: l.npt, t: l.t ?? null })),
+        },
+        media_turma: resumo.mediaTurma === null ? null : Number(resumo.mediaTurma.toFixed(2)),
+        ano_letivo: ANO_LETIVO_ANTERIOR,
+      };
+      const { data, error } = await dbFrom("mini_pautas_historico").insert(snapshot).select().single();
+      if (error) throw error;
+      setHistorico((prev) => [data, ...prev]);
+      toast.success("Mini pauta guardada no histórico.");
+    } catch (e: any) {
+      toast.error(`Não foi possível guardar no histórico: ${e?.message ?? "erro de ligação"}`);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const carregarDoHistorico = (h: any) => {
+    setClasse(h.classe ?? "");
+    const letra = (h.notas as any)?.turma_letra ?? TODAS_TURMAS;
+    setTurma(letra || TODAS_TURMAS);
+    setDisciplina(h.disciplina ?? "");
+    setTrimestre(h.trimestre === "1-3" ? TODOS : (h.trimestre ?? "1"));
+    setLinhas((((h.notas as any)?.linhas ?? []) as any[]).map((l) => ({
+      alunoId: String(l.alunoId ?? ""), nome: l.nome ?? "", processo: String(l.processo ?? ""),
+      mac: l.mac ?? "", npt: l.npt ?? "", ...(l.t ? { t: l.t } : {}),
+    })));
+    toast.info("Mini pauta carregada do histórico.");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const eliminarDoHistorico = async (id: string) => {
+    try {
+      const { error } = await dbFrom("mini_pautas_historico").delete().eq("id", id);
+      if (error) throw error;
+      setHistorico((prev) => prev.filter((h) => h.id !== id));
+      toast.success("Registo eliminado do histórico.");
+    } catch (e: any) {
+      toast.error(`Não foi possível eliminar: ${e?.message ?? "erro de ligação"}`);
+    }
+  };
+
 
   const tabela = () => ({
     head: ["Nº", "Nome do Aluno", "MAC", "NPT", "MT", "Resultado"],
