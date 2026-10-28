@@ -1,4 +1,6 @@
+import { Fragment } from "react";
 import { corNota } from "@/lib/corNota";
+
 import { useEffect, useMemo, useState } from "react";
 import RoleLayout from "@/components/RoleLayout";
 import { db as dbFrom } from "@/lib/db";
@@ -446,8 +448,53 @@ export default function MiniPauta() {
             </table>
           </div>
         </div>
+
+        {/* Histórico das mini pautas guardadas */}
+        <div className="no-print bg-card border border-border rounded-xl p-6 space-y-4 shadow-sm">
+          <div className="flex items-center gap-2">
+            <FolderDown className="h-5 w-5 text-primary" />
+            <h3 className="font-montserrat font-bold text-lg">Histórico de Mini Pautas</h3>
+          </div>
+          <p className="text-xs text-muted-foreground">Guarda uma cópia da mini pauta (com os três trimestres) e carrega-a mais tarde para editar.</p>
+          {historico.length === 0 ? (
+            <p className="text-sm text-muted-foreground text-center py-4">Ainda não guardou nenhuma mini pauta no histórico.</p>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border bg-secondary/40 text-muted-foreground">
+                    <th className="text-left p-3">Classe</th>
+                    <th className="text-left p-3">Disciplina</th>
+                    <th className="text-center p-3">Turma</th>
+                    <th className="text-center p-3">Trimestre</th>
+                    <th className="text-center p-3">Média da turma</th>
+                    <th className="text-center p-3">Data</th>
+                    <th className="text-center p-3">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {historico.map((h) => (
+                    <tr key={h.id} className="border-b border-border/60 hover:bg-secondary/20">
+                      <td className="p-3 font-medium">{h.classe}</td>
+                      <td className="p-3">{h.disciplina}</td>
+                      <td className="p-3 text-center">{h.turma || "—"}</td>
+                      <td className="p-3 text-center">{h.trimestre === "1-3" ? "1º, 2º e 3º" : `${h.trimestre}º`}</td>
+                      <td className="p-3 text-center font-mono font-bold">{h.media_turma ?? "—"}</td>
+                      <td className="p-3 text-center text-xs text-muted-foreground">{h.created_at ? new Date(h.created_at).toLocaleDateString("pt-PT") : "—"}</td>
+                      <td className="p-3 text-center flex justify-center gap-2">
+                        <Button variant="ghost" size="icon" onClick={() => carregarDoHistorico(h)} title="Carregar para edição"><FolderDown className="h-4 w-4 text-primary" /></Button>
+                        <Button variant="ghost" size="icon" onClick={() => void eliminarDoHistorico(h.id)} title="Eliminar"><Trash2 className="h-4 w-4 text-destructive" /></Button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
       </div>
     </RoleLayout>
+
   );
 }
 
