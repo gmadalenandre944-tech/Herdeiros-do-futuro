@@ -156,6 +156,17 @@ export default function MiniPauta() {
     setLinhas((prev) => prev.map((l, idx) => (idx === i ? { ...l, [campo]: v } : l)));
   };
 
+  /** Edição no modo "os três trimestres": MAC/NPT de cada trimestre. */
+  const editarTres = (i: number, t: string, campo: "mac" | "npt", v: string) => {
+    if (v !== "" && !/^\d{0,2}([.,]\d{0,2})?$/.test(v)) return;
+    if (v !== "" && Number(v.replace(",", ".")) > max) return toast.error(`A nota máxima é ${max}.`);
+    setLinhas((prev) => prev.map((l, idx) => (idx === i ? { ...l, t: { ...l.t, [t]: { mac: "", npt: "", ...l.t?.[t], [campo]: v } } } : l)));
+  };
+
+  /** Completo num trimestre: MAC e NPT numéricos. */
+  const completoNoT = (l: Linha, t: string) => mtDe(l.t?.[t]) !== null;
+
+
   const gravar = async () => {
     if (todos) return toast.error("Para gravar, escolha um trimestre (1º, 2º ou 3º).");
     if (!classe || !disciplina.trim()) return toast.error("Escolha a classe e a disciplina.");
