@@ -10,33 +10,674 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdministradoresRouteImport } from './routes/administradores'
+import { Route as BaseDadosRouteImport } from './routes/base-dados'
+import { Route as ChatRouteImport } from './routes/chat'
+import { Route as ConfirmacaoRouteImport } from './routes/confirmacao'
+import { Route as DocumentosRouteImport } from './routes/documentos'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as MatriculaRouteImport } from './routes/matricula'
+import { Route as PautaRouteImport } from './routes/pauta'
+import { Route as SecretariaRouteImport } from './routes/secretaria'
+import { Route as SecretariaVirtualRouteImport } from './routes/secretaria-virtual'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminAnnouncementsRouteImport } from './routes/admin.announcements'
+import { Route as AdminBankRouteImport } from './routes/admin.bank'
+import { Route as AdminDadosRouteImport } from './routes/admin.dados'
+import { Route as AdminMatrizRouteImport } from './routes/admin.matriz'
+import { Route as AdminPautaGeralRouteImport } from './routes/admin.pauta-geral'
+import { Route as AdminReportsRouteImport } from './routes/admin.reports'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AlunoIndexRouteImport } from './routes/aluno.index'
+import { Route as AlunoDesempenhoRouteImport } from './routes/aluno.desempenho'
+import { Route as AlunoGradesRouteImport } from './routes/aluno.grades'
+import { Route as AlunoHorariosRouteImport } from './routes/aluno.horarios'
+import { Route as AlunoMaterialsRouteImport } from './routes/aluno.materials'
+import { Route as AlunoPaymentsRouteImport } from './routes/aluno.payments'
+import { Route as AlunoRankingRouteImport } from './routes/aluno.ranking'
+import { Route as AlunoSchedulesRouteImport } from './routes/aluno.schedules'
+import { Route as EncarregadoIndexRouteImport } from './routes/encarregado.index'
+import { Route as EncarregadoPaymentsRouteImport } from './routes/encarregado.payments'
+import { Route as EncarregadoStudentsRouteImport } from './routes/encarregado.students'
+import { Route as EncarregadoVinculoRouteImport } from './routes/encarregado.vinculo'
+import { Route as ProfessorIndexRouteImport } from './routes/professor.index'
+import { Route as ProfessorAnnouncementsRouteImport } from './routes/professor.announcements'
+import { Route as ProfessorAttendanceRouteImport } from './routes/professor.attendance'
+import { Route as ProfessorBoletinsRouteImport } from './routes/professor.boletins'
+import { Route as ProfessorClassesRouteImport } from './routes/professor.classes'
+import { Route as ProfessorGradesRouteImport } from './routes/professor.grades'
+import { Route as ProfessorReportsRouteImport } from './routes/professor.reports'
+import { Route as ProfessorScheduleRouteImport } from './routes/professor.schedule'
+import { Route as ProfessorSummariesRouteImport } from './routes/professor.summaries'
+import { Route as SecretarioIndexRouteImport } from './routes/secretario.index'
+import { Route as SecretarioAnnouncementsRouteImport } from './routes/secretario.announcements'
+import { Route as SecretarioCartaoRouteImport } from './routes/secretario.cartao'
+import { Route as SecretarioDocRequestsRouteImport } from './routes/secretario.doc-requests'
+import { Route as SecretarioEnrollmentRouteImport } from './routes/secretario.enrollment'
+import { Route as SecretarioFinancasRouteImport } from './routes/secretario.financas'
+import { Route as SecretarioListsRouteImport } from './routes/secretario.lists'
+import { Route as SecretarioPaymentsRouteImport } from './routes/secretario.payments'
+import { Route as SecretarioUniformesRouteImport } from './routes/secretario.uniformes'
+import { Route as ApiPublicSbRelayRouteImport } from './routes/api/public/sb-relay'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdministradoresRoute = AdministradoresRouteImport.update({
+  id: '/administradores',
+  path: '/administradores',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaseDadosRoute = BaseDadosRouteImport.update({
+  id: '/base-dados',
+  path: '/base-dados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfirmacaoRoute = ConfirmacaoRouteImport.update({
+  id: '/confirmacao',
+  path: '/confirmacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentosRoute = DocumentosRouteImport.update({
+  id: '/documentos',
+  path: '/documentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MatriculaRoute = MatriculaRouteImport.update({
+  id: '/matricula',
+  path: '/matricula',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PautaRoute = PautaRouteImport.update({
+  id: '/pauta',
+  path: '/pauta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretariaRoute = SecretariaRouteImport.update({
+  id: '/secretaria',
+  path: '/secretaria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretariaVirtualRoute = SecretariaVirtualRouteImport.update({
+  id: '/secretaria-virtual',
+  path: '/secretaria-virtual',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAnnouncementsRoute = AdminAnnouncementsRouteImport.update({
+  id: '/admin/announcements',
+  path: '/admin/announcements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBankRoute = AdminBankRouteImport.update({
+  id: '/admin/bank',
+  path: '/admin/bank',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDadosRoute = AdminDadosRouteImport.update({
+  id: '/admin/dados',
+  path: '/admin/dados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminMatrizRoute = AdminMatrizRouteImport.update({
+  id: '/admin/matriz',
+  path: '/admin/matriz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPautaGeralRoute = AdminPautaGeralRouteImport.update({
+  id: '/admin/pauta-geral',
+  path: '/admin/pauta-geral',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/admin/reports',
+  path: '/admin/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlunoIndexRoute = AlunoIndexRouteImport.update({
+  id: '/aluno/',
+  path: '/aluno/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlunoDesempenhoRoute = AlunoDesempenhoRouteImport.update({
+  id: '/aluno/desempenho',
+  path: '/aluno/desempenho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlunoGradesRoute = AlunoGradesRouteImport.update({
+  id: '/aluno/grades',
+  path: '/aluno/grades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlunoHorariosRoute = AlunoHorariosRouteImport.update({
+  id: '/aluno/horarios',
+  path: '/aluno/horarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlunoMaterialsRoute = AlunoMaterialsRouteImport.update({
+  id: '/aluno/materials',
+  path: '/aluno/materials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlunoPaymentsRoute = AlunoPaymentsRouteImport.update({
+  id: '/aluno/payments',
+  path: '/aluno/payments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlunoRankingRoute = AlunoRankingRouteImport.update({
+  id: '/aluno/ranking',
+  path: '/aluno/ranking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlunoSchedulesRoute = AlunoSchedulesRouteImport.update({
+  id: '/aluno/schedules',
+  path: '/aluno/schedules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EncarregadoIndexRoute = EncarregadoIndexRouteImport.update({
+  id: '/encarregado/',
+  path: '/encarregado/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EncarregadoPaymentsRoute = EncarregadoPaymentsRouteImport.update({
+  id: '/encarregado/payments',
+  path: '/encarregado/payments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EncarregadoStudentsRoute = EncarregadoStudentsRouteImport.update({
+  id: '/encarregado/students',
+  path: '/encarregado/students',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EncarregadoVinculoRoute = EncarregadoVinculoRouteImport.update({
+  id: '/encarregado/vinculo',
+  path: '/encarregado/vinculo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfessorIndexRoute = ProfessorIndexRouteImport.update({
+  id: '/professor/',
+  path: '/professor/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfessorAnnouncementsRoute = ProfessorAnnouncementsRouteImport.update({
+  id: '/professor/announcements',
+  path: '/professor/announcements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfessorAttendanceRoute = ProfessorAttendanceRouteImport.update({
+  id: '/professor/attendance',
+  path: '/professor/attendance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfessorBoletinsRoute = ProfessorBoletinsRouteImport.update({
+  id: '/professor/boletins',
+  path: '/professor/boletins',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfessorClassesRoute = ProfessorClassesRouteImport.update({
+  id: '/professor/classes',
+  path: '/professor/classes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfessorGradesRoute = ProfessorGradesRouteImport.update({
+  id: '/professor/grades',
+  path: '/professor/grades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfessorReportsRoute = ProfessorReportsRouteImport.update({
+  id: '/professor/reports',
+  path: '/professor/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfessorScheduleRoute = ProfessorScheduleRouteImport.update({
+  id: '/professor/schedule',
+  path: '/professor/schedule',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfessorSummariesRoute = ProfessorSummariesRouteImport.update({
+  id: '/professor/summaries',
+  path: '/professor/summaries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretarioIndexRoute = SecretarioIndexRouteImport.update({
+  id: '/secretario/',
+  path: '/secretario/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretarioAnnouncementsRoute = SecretarioAnnouncementsRouteImport.update({
+  id: '/secretario/announcements',
+  path: '/secretario/announcements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretarioCartaoRoute = SecretarioCartaoRouteImport.update({
+  id: '/secretario/cartao',
+  path: '/secretario/cartao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretarioDocRequestsRoute = SecretarioDocRequestsRouteImport.update({
+  id: '/secretario/doc-requests',
+  path: '/secretario/doc-requests',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretarioEnrollmentRoute = SecretarioEnrollmentRouteImport.update({
+  id: '/secretario/enrollment',
+  path: '/secretario/enrollment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretarioFinancasRoute = SecretarioFinancasRouteImport.update({
+  id: '/secretario/financas',
+  path: '/secretario/financas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretarioListsRoute = SecretarioListsRouteImport.update({
+  id: '/secretario/lists',
+  path: '/secretario/lists',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretarioPaymentsRoute = SecretarioPaymentsRouteImport.update({
+  id: '/secretario/payments',
+  path: '/secretario/payments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecretarioUniformesRoute = SecretarioUniformesRouteImport.update({
+  id: '/secretario/uniformes',
+  path: '/secretario/uniformes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicSbRelayRoute = ApiPublicSbRelayRouteImport.update({
+  id: '/api/public/sb-relay',
+  path: '/api/public/sb-relay',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/administradores': typeof AdministradoresRoute
+  '/base-dados': typeof BaseDadosRoute
+  '/chat': typeof ChatRoute
+  '/confirmacao': typeof ConfirmacaoRoute
+  '/documentos': typeof DocumentosRoute
+  '/login': typeof LoginRoute
+  '/matricula': typeof MatriculaRoute
+  '/pauta': typeof PautaRoute
+  '/secretaria': typeof SecretariaRoute
+  '/secretaria-virtual': typeof SecretariaVirtualRoute
+  '/admin/announcements': typeof AdminAnnouncementsRoute
+  '/admin/bank': typeof AdminBankRoute
+  '/admin/dados': typeof AdminDadosRoute
+  '/admin/matriz': typeof AdminMatrizRoute
+  '/admin/pauta-geral': typeof AdminPautaGeralRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/aluno/desempenho': typeof AlunoDesempenhoRoute
+  '/aluno/grades': typeof AlunoGradesRoute
+  '/aluno/horarios': typeof AlunoHorariosRoute
+  '/aluno/materials': typeof AlunoMaterialsRoute
+  '/aluno/payments': typeof AlunoPaymentsRoute
+  '/aluno/ranking': typeof AlunoRankingRoute
+  '/aluno/schedules': typeof AlunoSchedulesRoute
+  '/encarregado/payments': typeof EncarregadoPaymentsRoute
+  '/encarregado/students': typeof EncarregadoStudentsRoute
+  '/encarregado/vinculo': typeof EncarregadoVinculoRoute
+  '/professor/announcements': typeof ProfessorAnnouncementsRoute
+  '/professor/attendance': typeof ProfessorAttendanceRoute
+  '/professor/boletins': typeof ProfessorBoletinsRoute
+  '/professor/classes': typeof ProfessorClassesRoute
+  '/professor/grades': typeof ProfessorGradesRoute
+  '/professor/reports': typeof ProfessorReportsRoute
+  '/professor/schedule': typeof ProfessorScheduleRoute
+  '/professor/summaries': typeof ProfessorSummariesRoute
+  '/secretario/announcements': typeof SecretarioAnnouncementsRoute
+  '/secretario/cartao': typeof SecretarioCartaoRoute
+  '/secretario/doc-requests': typeof SecretarioDocRequestsRoute
+  '/secretario/enrollment': typeof SecretarioEnrollmentRoute
+  '/secretario/financas': typeof SecretarioFinancasRoute
+  '/secretario/lists': typeof SecretarioListsRoute
+  '/secretario/payments': typeof SecretarioPaymentsRoute
+  '/secretario/uniformes': typeof SecretarioUniformesRoute
+  '/admin/': typeof AdminIndexRoute
+  '/aluno/': typeof AlunoIndexRoute
+  '/encarregado/': typeof EncarregadoIndexRoute
+  '/professor/': typeof ProfessorIndexRoute
+  '/secretario/': typeof SecretarioIndexRoute
+  '/api/public/sb-relay': typeof ApiPublicSbRelayRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/administradores': typeof AdministradoresRoute
+  '/base-dados': typeof BaseDadosRoute
+  '/chat': typeof ChatRoute
+  '/confirmacao': typeof ConfirmacaoRoute
+  '/documentos': typeof DocumentosRoute
+  '/login': typeof LoginRoute
+  '/matricula': typeof MatriculaRoute
+  '/pauta': typeof PautaRoute
+  '/secretaria': typeof SecretariaRoute
+  '/secretaria-virtual': typeof SecretariaVirtualRoute
+  '/admin/announcements': typeof AdminAnnouncementsRoute
+  '/admin/bank': typeof AdminBankRoute
+  '/admin/dados': typeof AdminDadosRoute
+  '/admin/matriz': typeof AdminMatrizRoute
+  '/admin/pauta-geral': typeof AdminPautaGeralRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/aluno/desempenho': typeof AlunoDesempenhoRoute
+  '/aluno/grades': typeof AlunoGradesRoute
+  '/aluno/horarios': typeof AlunoHorariosRoute
+  '/aluno/materials': typeof AlunoMaterialsRoute
+  '/aluno/payments': typeof AlunoPaymentsRoute
+  '/aluno/ranking': typeof AlunoRankingRoute
+  '/aluno/schedules': typeof AlunoSchedulesRoute
+  '/encarregado/payments': typeof EncarregadoPaymentsRoute
+  '/encarregado/students': typeof EncarregadoStudentsRoute
+  '/encarregado/vinculo': typeof EncarregadoVinculoRoute
+  '/professor/announcements': typeof ProfessorAnnouncementsRoute
+  '/professor/attendance': typeof ProfessorAttendanceRoute
+  '/professor/boletins': typeof ProfessorBoletinsRoute
+  '/professor/classes': typeof ProfessorClassesRoute
+  '/professor/grades': typeof ProfessorGradesRoute
+  '/professor/reports': typeof ProfessorReportsRoute
+  '/professor/schedule': typeof ProfessorScheduleRoute
+  '/professor/summaries': typeof ProfessorSummariesRoute
+  '/secretario/announcements': typeof SecretarioAnnouncementsRoute
+  '/secretario/cartao': typeof SecretarioCartaoRoute
+  '/secretario/doc-requests': typeof SecretarioDocRequestsRoute
+  '/secretario/enrollment': typeof SecretarioEnrollmentRoute
+  '/secretario/financas': typeof SecretarioFinancasRoute
+  '/secretario/lists': typeof SecretarioListsRoute
+  '/secretario/payments': typeof SecretarioPaymentsRoute
+  '/secretario/uniformes': typeof SecretarioUniformesRoute
+  '/admin': typeof AdminIndexRoute
+  '/aluno': typeof AlunoIndexRoute
+  '/encarregado': typeof EncarregadoIndexRoute
+  '/professor': typeof ProfessorIndexRoute
+  '/secretario': typeof SecretarioIndexRoute
+  '/api/public/sb-relay': typeof ApiPublicSbRelayRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/administradores': typeof AdministradoresRoute
+  '/base-dados': typeof BaseDadosRoute
+  '/chat': typeof ChatRoute
+  '/confirmacao': typeof ConfirmacaoRoute
+  '/documentos': typeof DocumentosRoute
+  '/login': typeof LoginRoute
+  '/matricula': typeof MatriculaRoute
+  '/pauta': typeof PautaRoute
+  '/secretaria': typeof SecretariaRoute
+  '/secretaria-virtual': typeof SecretariaVirtualRoute
+  '/admin/announcements': typeof AdminAnnouncementsRoute
+  '/admin/bank': typeof AdminBankRoute
+  '/admin/dados': typeof AdminDadosRoute
+  '/admin/matriz': typeof AdminMatrizRoute
+  '/admin/pauta-geral': typeof AdminPautaGeralRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/aluno/desempenho': typeof AlunoDesempenhoRoute
+  '/aluno/grades': typeof AlunoGradesRoute
+  '/aluno/horarios': typeof AlunoHorariosRoute
+  '/aluno/materials': typeof AlunoMaterialsRoute
+  '/aluno/payments': typeof AlunoPaymentsRoute
+  '/aluno/ranking': typeof AlunoRankingRoute
+  '/aluno/schedules': typeof AlunoSchedulesRoute
+  '/encarregado/payments': typeof EncarregadoPaymentsRoute
+  '/encarregado/students': typeof EncarregadoStudentsRoute
+  '/encarregado/vinculo': typeof EncarregadoVinculoRoute
+  '/professor/announcements': typeof ProfessorAnnouncementsRoute
+  '/professor/attendance': typeof ProfessorAttendanceRoute
+  '/professor/boletins': typeof ProfessorBoletinsRoute
+  '/professor/classes': typeof ProfessorClassesRoute
+  '/professor/grades': typeof ProfessorGradesRoute
+  '/professor/reports': typeof ProfessorReportsRoute
+  '/professor/schedule': typeof ProfessorScheduleRoute
+  '/professor/summaries': typeof ProfessorSummariesRoute
+  '/secretario/announcements': typeof SecretarioAnnouncementsRoute
+  '/secretario/cartao': typeof SecretarioCartaoRoute
+  '/secretario/doc-requests': typeof SecretarioDocRequestsRoute
+  '/secretario/enrollment': typeof SecretarioEnrollmentRoute
+  '/secretario/financas': typeof SecretarioFinancasRoute
+  '/secretario/lists': typeof SecretarioListsRoute
+  '/secretario/payments': typeof SecretarioPaymentsRoute
+  '/secretario/uniformes': typeof SecretarioUniformesRoute
+  '/admin/': typeof AdminIndexRoute
+  '/aluno/': typeof AlunoIndexRoute
+  '/encarregado/': typeof EncarregadoIndexRoute
+  '/professor/': typeof ProfessorIndexRoute
+  '/secretario/': typeof SecretarioIndexRoute
+  '/api/public/sb-relay': typeof ApiPublicSbRelayRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/administradores'
+    | '/base-dados'
+    | '/chat'
+    | '/confirmacao'
+    | '/documentos'
+    | '/login'
+    | '/matricula'
+    | '/pauta'
+    | '/secretaria'
+    | '/secretaria-virtual'
+    | '/admin/announcements'
+    | '/admin/bank'
+    | '/admin/dados'
+    | '/admin/matriz'
+    | '/admin/pauta-geral'
+    | '/admin/reports'
+    | '/admin/settings'
+    | '/aluno/desempenho'
+    | '/aluno/grades'
+    | '/aluno/horarios'
+    | '/aluno/materials'
+    | '/aluno/payments'
+    | '/aluno/ranking'
+    | '/aluno/schedules'
+    | '/encarregado/payments'
+    | '/encarregado/students'
+    | '/encarregado/vinculo'
+    | '/professor/announcements'
+    | '/professor/attendance'
+    | '/professor/boletins'
+    | '/professor/classes'
+    | '/professor/grades'
+    | '/professor/reports'
+    | '/professor/schedule'
+    | '/professor/summaries'
+    | '/secretario/announcements'
+    | '/secretario/cartao'
+    | '/secretario/doc-requests'
+    | '/secretario/enrollment'
+    | '/secretario/financas'
+    | '/secretario/lists'
+    | '/secretario/payments'
+    | '/secretario/uniformes'
+    | '/admin/'
+    | '/aluno/'
+    | '/encarregado/'
+    | '/professor/'
+    | '/secretario/'
+    | '/api/public/sb-relay'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/administradores'
+    | '/base-dados'
+    | '/chat'
+    | '/confirmacao'
+    | '/documentos'
+    | '/login'
+    | '/matricula'
+    | '/pauta'
+    | '/secretaria'
+    | '/secretaria-virtual'
+    | '/admin/announcements'
+    | '/admin/bank'
+    | '/admin/dados'
+    | '/admin/matriz'
+    | '/admin/pauta-geral'
+    | '/admin/reports'
+    | '/admin/settings'
+    | '/aluno/desempenho'
+    | '/aluno/grades'
+    | '/aluno/horarios'
+    | '/aluno/materials'
+    | '/aluno/payments'
+    | '/aluno/ranking'
+    | '/aluno/schedules'
+    | '/encarregado/payments'
+    | '/encarregado/students'
+    | '/encarregado/vinculo'
+    | '/professor/announcements'
+    | '/professor/attendance'
+    | '/professor/boletins'
+    | '/professor/classes'
+    | '/professor/grades'
+    | '/professor/reports'
+    | '/professor/schedule'
+    | '/professor/summaries'
+    | '/secretario/announcements'
+    | '/secretario/cartao'
+    | '/secretario/doc-requests'
+    | '/secretario/enrollment'
+    | '/secretario/financas'
+    | '/secretario/lists'
+    | '/secretario/payments'
+    | '/secretario/uniformes'
+    | '/admin'
+    | '/aluno'
+    | '/encarregado'
+    | '/professor'
+    | '/secretario'
+    | '/api/public/sb-relay'
+  id:
+    | '__root__'
+    | '/'
+    | '/administradores'
+    | '/base-dados'
+    | '/chat'
+    | '/confirmacao'
+    | '/documentos'
+    | '/login'
+    | '/matricula'
+    | '/pauta'
+    | '/secretaria'
+    | '/secretaria-virtual'
+    | '/admin/announcements'
+    | '/admin/bank'
+    | '/admin/dados'
+    | '/admin/matriz'
+    | '/admin/pauta-geral'
+    | '/admin/reports'
+    | '/admin/settings'
+    | '/aluno/desempenho'
+    | '/aluno/grades'
+    | '/aluno/horarios'
+    | '/aluno/materials'
+    | '/aluno/payments'
+    | '/aluno/ranking'
+    | '/aluno/schedules'
+    | '/encarregado/payments'
+    | '/encarregado/students'
+    | '/encarregado/vinculo'
+    | '/professor/announcements'
+    | '/professor/attendance'
+    | '/professor/boletins'
+    | '/professor/classes'
+    | '/professor/grades'
+    | '/professor/reports'
+    | '/professor/schedule'
+    | '/professor/summaries'
+    | '/secretario/announcements'
+    | '/secretario/cartao'
+    | '/secretario/doc-requests'
+    | '/secretario/enrollment'
+    | '/secretario/financas'
+    | '/secretario/lists'
+    | '/secretario/payments'
+    | '/secretario/uniformes'
+    | '/admin/'
+    | '/aluno/'
+    | '/encarregado/'
+    | '/professor/'
+    | '/secretario/'
+    | '/api/public/sb-relay'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdministradoresRoute: typeof AdministradoresRoute
+  BaseDadosRoute: typeof BaseDadosRoute
+  ChatRoute: typeof ChatRoute
+  ConfirmacaoRoute: typeof ConfirmacaoRoute
+  DocumentosRoute: typeof DocumentosRoute
+  LoginRoute: typeof LoginRoute
+  MatriculaRoute: typeof MatriculaRoute
+  PautaRoute: typeof PautaRoute
+  SecretariaRoute: typeof SecretariaRoute
+  SecretariaVirtualRoute: typeof SecretariaVirtualRoute
+  AdminAnnouncementsRoute: typeof AdminAnnouncementsRoute
+  AdminBankRoute: typeof AdminBankRoute
+  AdminDadosRoute: typeof AdminDadosRoute
+  AdminMatrizRoute: typeof AdminMatrizRoute
+  AdminPautaGeralRoute: typeof AdminPautaGeralRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AlunoDesempenhoRoute: typeof AlunoDesempenhoRoute
+  AlunoGradesRoute: typeof AlunoGradesRoute
+  AlunoHorariosRoute: typeof AlunoHorariosRoute
+  AlunoMaterialsRoute: typeof AlunoMaterialsRoute
+  AlunoPaymentsRoute: typeof AlunoPaymentsRoute
+  AlunoRankingRoute: typeof AlunoRankingRoute
+  AlunoSchedulesRoute: typeof AlunoSchedulesRoute
+  EncarregadoPaymentsRoute: typeof EncarregadoPaymentsRoute
+  EncarregadoStudentsRoute: typeof EncarregadoStudentsRoute
+  EncarregadoVinculoRoute: typeof EncarregadoVinculoRoute
+  ProfessorAnnouncementsRoute: typeof ProfessorAnnouncementsRoute
+  ProfessorAttendanceRoute: typeof ProfessorAttendanceRoute
+  ProfessorBoletinsRoute: typeof ProfessorBoletinsRoute
+  ProfessorClassesRoute: typeof ProfessorClassesRoute
+  ProfessorGradesRoute: typeof ProfessorGradesRoute
+  ProfessorReportsRoute: typeof ProfessorReportsRoute
+  ProfessorScheduleRoute: typeof ProfessorScheduleRoute
+  ProfessorSummariesRoute: typeof ProfessorSummariesRoute
+  SecretarioAnnouncementsRoute: typeof SecretarioAnnouncementsRoute
+  SecretarioCartaoRoute: typeof SecretarioCartaoRoute
+  SecretarioDocRequestsRoute: typeof SecretarioDocRequestsRoute
+  SecretarioEnrollmentRoute: typeof SecretarioEnrollmentRoute
+  SecretarioFinancasRoute: typeof SecretarioFinancasRoute
+  SecretarioListsRoute: typeof SecretarioListsRoute
+  SecretarioPaymentsRoute: typeof SecretarioPaymentsRoute
+  SecretarioUniformesRoute: typeof SecretarioUniformesRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  AlunoIndexRoute: typeof AlunoIndexRoute
+  EncarregadoIndexRoute: typeof EncarregadoIndexRoute
+  ProfessorIndexRoute: typeof ProfessorIndexRoute
+  SecretarioIndexRoute: typeof SecretarioIndexRoute
+  ApiPublicSbRelayRoute: typeof ApiPublicSbRelayRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +689,403 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/administradores': {
+      id: '/administradores'
+      path: '/administradores'
+      fullPath: '/administradores'
+      preLoaderRoute: typeof AdministradoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/base-dados': {
+      id: '/base-dados'
+      path: '/base-dados'
+      fullPath: '/base-dados'
+      preLoaderRoute: typeof BaseDadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confirmacao': {
+      id: '/confirmacao'
+      path: '/confirmacao'
+      fullPath: '/confirmacao'
+      preLoaderRoute: typeof ConfirmacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documentos': {
+      id: '/documentos'
+      path: '/documentos'
+      fullPath: '/documentos'
+      preLoaderRoute: typeof DocumentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/matricula': {
+      id: '/matricula'
+      path: '/matricula'
+      fullPath: '/matricula'
+      preLoaderRoute: typeof MatriculaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pauta': {
+      id: '/pauta'
+      path: '/pauta'
+      fullPath: '/pauta'
+      preLoaderRoute: typeof PautaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretaria': {
+      id: '/secretaria'
+      path: '/secretaria'
+      fullPath: '/secretaria'
+      preLoaderRoute: typeof SecretariaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretaria-virtual': {
+      id: '/secretaria-virtual'
+      path: '/secretaria-virtual'
+      fullPath: '/secretaria-virtual'
+      preLoaderRoute: typeof SecretariaVirtualRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/announcements': {
+      id: '/admin/announcements'
+      path: '/admin/announcements'
+      fullPath: '/admin/announcements'
+      preLoaderRoute: typeof AdminAnnouncementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/bank': {
+      id: '/admin/bank'
+      path: '/admin/bank'
+      fullPath: '/admin/bank'
+      preLoaderRoute: typeof AdminBankRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dados': {
+      id: '/admin/dados'
+      path: '/admin/dados'
+      fullPath: '/admin/dados'
+      preLoaderRoute: typeof AdminDadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/matriz': {
+      id: '/admin/matriz'
+      path: '/admin/matriz'
+      fullPath: '/admin/matriz'
+      preLoaderRoute: typeof AdminMatrizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/pauta-geral': {
+      id: '/admin/pauta-geral'
+      path: '/admin/pauta-geral'
+      fullPath: '/admin/pauta-geral'
+      preLoaderRoute: typeof AdminPautaGeralRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/admin/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluno/': {
+      id: '/aluno/'
+      path: '/aluno'
+      fullPath: '/aluno/'
+      preLoaderRoute: typeof AlunoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluno/desempenho': {
+      id: '/aluno/desempenho'
+      path: '/aluno/desempenho'
+      fullPath: '/aluno/desempenho'
+      preLoaderRoute: typeof AlunoDesempenhoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluno/grades': {
+      id: '/aluno/grades'
+      path: '/aluno/grades'
+      fullPath: '/aluno/grades'
+      preLoaderRoute: typeof AlunoGradesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluno/horarios': {
+      id: '/aluno/horarios'
+      path: '/aluno/horarios'
+      fullPath: '/aluno/horarios'
+      preLoaderRoute: typeof AlunoHorariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluno/materials': {
+      id: '/aluno/materials'
+      path: '/aluno/materials'
+      fullPath: '/aluno/materials'
+      preLoaderRoute: typeof AlunoMaterialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluno/payments': {
+      id: '/aluno/payments'
+      path: '/aluno/payments'
+      fullPath: '/aluno/payments'
+      preLoaderRoute: typeof AlunoPaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluno/ranking': {
+      id: '/aluno/ranking'
+      path: '/aluno/ranking'
+      fullPath: '/aluno/ranking'
+      preLoaderRoute: typeof AlunoRankingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluno/schedules': {
+      id: '/aluno/schedules'
+      path: '/aluno/schedules'
+      fullPath: '/aluno/schedules'
+      preLoaderRoute: typeof AlunoSchedulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/encarregado/': {
+      id: '/encarregado/'
+      path: '/encarregado'
+      fullPath: '/encarregado/'
+      preLoaderRoute: typeof EncarregadoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/encarregado/payments': {
+      id: '/encarregado/payments'
+      path: '/encarregado/payments'
+      fullPath: '/encarregado/payments'
+      preLoaderRoute: typeof EncarregadoPaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/encarregado/students': {
+      id: '/encarregado/students'
+      path: '/encarregado/students'
+      fullPath: '/encarregado/students'
+      preLoaderRoute: typeof EncarregadoStudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/encarregado/vinculo': {
+      id: '/encarregado/vinculo'
+      path: '/encarregado/vinculo'
+      fullPath: '/encarregado/vinculo'
+      preLoaderRoute: typeof EncarregadoVinculoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/professor/': {
+      id: '/professor/'
+      path: '/professor'
+      fullPath: '/professor/'
+      preLoaderRoute: typeof ProfessorIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/professor/announcements': {
+      id: '/professor/announcements'
+      path: '/professor/announcements'
+      fullPath: '/professor/announcements'
+      preLoaderRoute: typeof ProfessorAnnouncementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/professor/attendance': {
+      id: '/professor/attendance'
+      path: '/professor/attendance'
+      fullPath: '/professor/attendance'
+      preLoaderRoute: typeof ProfessorAttendanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/professor/boletins': {
+      id: '/professor/boletins'
+      path: '/professor/boletins'
+      fullPath: '/professor/boletins'
+      preLoaderRoute: typeof ProfessorBoletinsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/professor/classes': {
+      id: '/professor/classes'
+      path: '/professor/classes'
+      fullPath: '/professor/classes'
+      preLoaderRoute: typeof ProfessorClassesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/professor/grades': {
+      id: '/professor/grades'
+      path: '/professor/grades'
+      fullPath: '/professor/grades'
+      preLoaderRoute: typeof ProfessorGradesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/professor/reports': {
+      id: '/professor/reports'
+      path: '/professor/reports'
+      fullPath: '/professor/reports'
+      preLoaderRoute: typeof ProfessorReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/professor/schedule': {
+      id: '/professor/schedule'
+      path: '/professor/schedule'
+      fullPath: '/professor/schedule'
+      preLoaderRoute: typeof ProfessorScheduleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/professor/summaries': {
+      id: '/professor/summaries'
+      path: '/professor/summaries'
+      fullPath: '/professor/summaries'
+      preLoaderRoute: typeof ProfessorSummariesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretario/': {
+      id: '/secretario/'
+      path: '/secretario'
+      fullPath: '/secretario/'
+      preLoaderRoute: typeof SecretarioIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretario/announcements': {
+      id: '/secretario/announcements'
+      path: '/secretario/announcements'
+      fullPath: '/secretario/announcements'
+      preLoaderRoute: typeof SecretarioAnnouncementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretario/cartao': {
+      id: '/secretario/cartao'
+      path: '/secretario/cartao'
+      fullPath: '/secretario/cartao'
+      preLoaderRoute: typeof SecretarioCartaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretario/doc-requests': {
+      id: '/secretario/doc-requests'
+      path: '/secretario/doc-requests'
+      fullPath: '/secretario/doc-requests'
+      preLoaderRoute: typeof SecretarioDocRequestsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretario/enrollment': {
+      id: '/secretario/enrollment'
+      path: '/secretario/enrollment'
+      fullPath: '/secretario/enrollment'
+      preLoaderRoute: typeof SecretarioEnrollmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretario/financas': {
+      id: '/secretario/financas'
+      path: '/secretario/financas'
+      fullPath: '/secretario/financas'
+      preLoaderRoute: typeof SecretarioFinancasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretario/lists': {
+      id: '/secretario/lists'
+      path: '/secretario/lists'
+      fullPath: '/secretario/lists'
+      preLoaderRoute: typeof SecretarioListsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretario/payments': {
+      id: '/secretario/payments'
+      path: '/secretario/payments'
+      fullPath: '/secretario/payments'
+      preLoaderRoute: typeof SecretarioPaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secretario/uniformes': {
+      id: '/secretario/uniformes'
+      path: '/secretario/uniformes'
+      fullPath: '/secretario/uniformes'
+      preLoaderRoute: typeof SecretarioUniformesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/sb-relay': {
+      id: '/api/public/sb-relay'
+      path: '/api/public/sb-relay'
+      fullPath: '/api/public/sb-relay'
+      preLoaderRoute: typeof ApiPublicSbRelayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdministradoresRoute: AdministradoresRoute,
+  BaseDadosRoute: BaseDadosRoute,
+  ChatRoute: ChatRoute,
+  ConfirmacaoRoute: ConfirmacaoRoute,
+  DocumentosRoute: DocumentosRoute,
+  LoginRoute: LoginRoute,
+  MatriculaRoute: MatriculaRoute,
+  PautaRoute: PautaRoute,
+  SecretariaRoute: SecretariaRoute,
+  SecretariaVirtualRoute: SecretariaVirtualRoute,
+  AdminAnnouncementsRoute: AdminAnnouncementsRoute,
+  AdminBankRoute: AdminBankRoute,
+  AdminDadosRoute: AdminDadosRoute,
+  AdminMatrizRoute: AdminMatrizRoute,
+  AdminPautaGeralRoute: AdminPautaGeralRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AlunoDesempenhoRoute: AlunoDesempenhoRoute,
+  AlunoGradesRoute: AlunoGradesRoute,
+  AlunoHorariosRoute: AlunoHorariosRoute,
+  AlunoMaterialsRoute: AlunoMaterialsRoute,
+  AlunoPaymentsRoute: AlunoPaymentsRoute,
+  AlunoRankingRoute: AlunoRankingRoute,
+  AlunoSchedulesRoute: AlunoSchedulesRoute,
+  EncarregadoPaymentsRoute: EncarregadoPaymentsRoute,
+  EncarregadoStudentsRoute: EncarregadoStudentsRoute,
+  EncarregadoVinculoRoute: EncarregadoVinculoRoute,
+  ProfessorAnnouncementsRoute: ProfessorAnnouncementsRoute,
+  ProfessorAttendanceRoute: ProfessorAttendanceRoute,
+  ProfessorBoletinsRoute: ProfessorBoletinsRoute,
+  ProfessorClassesRoute: ProfessorClassesRoute,
+  ProfessorGradesRoute: ProfessorGradesRoute,
+  ProfessorReportsRoute: ProfessorReportsRoute,
+  ProfessorScheduleRoute: ProfessorScheduleRoute,
+  ProfessorSummariesRoute: ProfessorSummariesRoute,
+  SecretarioAnnouncementsRoute: SecretarioAnnouncementsRoute,
+  SecretarioCartaoRoute: SecretarioCartaoRoute,
+  SecretarioDocRequestsRoute: SecretarioDocRequestsRoute,
+  SecretarioEnrollmentRoute: SecretarioEnrollmentRoute,
+  SecretarioFinancasRoute: SecretarioFinancasRoute,
+  SecretarioListsRoute: SecretarioListsRoute,
+  SecretarioPaymentsRoute: SecretarioPaymentsRoute,
+  SecretarioUniformesRoute: SecretarioUniformesRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  AlunoIndexRoute: AlunoIndexRoute,
+  EncarregadoIndexRoute: EncarregadoIndexRoute,
+  ProfessorIndexRoute: ProfessorIndexRoute,
+  SecretarioIndexRoute: SecretarioIndexRoute,
+  ApiPublicSbRelayRoute: ApiPublicSbRelayRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

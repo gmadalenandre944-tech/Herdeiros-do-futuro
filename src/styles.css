@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -5,131 +6,139 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * Herdeiros do Futuro design system.
+ * All tokens are HSL triplets consumed through @theme inline below.
  */
 
 @theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-montserrat: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-success: hsl(var(--success));
+  --color-warning: hsl(var(--warning));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-ring-offset-background: hsl(var(--background));
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --background: 38 42% 96%;
+  --foreground: 157 30% 16%;
+  --card: 42 45% 99%;
+  --card-foreground: 157 30% 16%;
+  --popover: 42 45% 99%;
+  --popover-foreground: 157 30% 16%;
+  --primary: 8 52% 47%;
+  --primary-foreground: 42 45% 98%;
+  --secondary: 35 48% 91%;
+  --secondary-foreground: 157 30% 18%;
+  --muted: 37 28% 91%;
+  --muted-foreground: 157 12% 43%;
+  --accent: 12 67% 55%;
+  --accent-foreground: 42 45% 98%;
+  --destructive: 2 66% 47%;
+  --destructive-foreground: 42 45% 98%;
+  --success: 152 55% 35%;
+  --warning: 45 92% 55%;
+  --border: 36 24% 84%;
+  --input: 36 24% 80%;
+  --ring: 8 52% 47%;
+  --radius: 0.75rem;
+  --sidebar-background: 8 52% 47%;
+  --sidebar-foreground: 39 44% 94%;
+  --sidebar-primary: 35 81% 69%;
+  --sidebar-primary-foreground: 157 30% 16%;
+  --sidebar-accent: 8 46% 38%;
+  --sidebar-accent-foreground: 39 44% 94%;
+  --sidebar-border: 8 38% 57%;
+  --sidebar-ring: 35 81% 69%;
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --background: 157 23% 10%;
+  --foreground: 39 44% 94%;
+  --card: 157 22% 14%;
+  --card-foreground: 39 44% 94%;
+  --popover: 157 22% 14%;
+  --popover-foreground: 39 44% 94%;
+  --primary: 8 58% 58%;
+  --primary-foreground: 157 30% 16%;
+  --secondary: 157 18% 20%;
+  --secondary-foreground: 39 44% 94%;
+  --muted: 157 15% 19%;
+  --muted-foreground: 39 20% 66%;
+  --accent: 12 67% 60%;
+  --accent-foreground: 157 30% 16%;
+  --destructive: 2 62% 56%;
+  --destructive-foreground: 39 44% 94%;
+  --success: 152 50% 45%;
+  --warning: 45 90% 60%;
+  --border: 157 13% 27%;
+  --input: 157 13% 27%;
+  --ring: 8 58% 58%;
+  --sidebar-background: 8 42% 23%;
+  --sidebar-foreground: 39 44% 94%;
+  --sidebar-primary: 35 81% 69%;
+  --sidebar-primary-foreground: 157 30% 16%;
+  --sidebar-accent: 8 34% 31%;
+  --sidebar-accent-foreground: 39 44% 94%;
+  --sidebar-border: 8 28% 35%;
+  --sidebar-ring: 35 81% 69%;
 }
 
 @layer base {
@@ -139,6 +148,104 @@
 
   body {
     background-color: var(--color-background);
+    background-image:
+      radial-gradient(circle at 100% 0%, hsl(var(--accent) / 0.075), transparent 28rem),
+      radial-gradient(circle at 0% 100%, hsl(var(--primary) / 0.045), transparent 32rem);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    min-width: 320px;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+
+  button, a, input, textarea, select {
+    outline-offset: 3px;
+  }
+
+  button {
+    border-radius: 9999px !important;
+  }
+
+  button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid hsl(var(--ring) / 0.55);
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.24);
+    color: hsl(var(--foreground));
   }
 }
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes soft-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-rise-in {
+  animation: rise-in 520ms cubic-bezier(.22,.8,.26,1) both;
+}
+
+.animate-soft-fade {
+  animation: soft-fade 420ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Linhas divisórias tipo Excel ao imprimir */
+@media print {
+  @page { margin: 12mm; }
+  table.print-grid { border-collapse: collapse !important; width: 100%; }
+  table.print-grid th,
+  table.print-grid td {
+    border: 1px solid #000 !important;
+    padding: 4px 6px !important;
+    color: #000 !important;
+    background: transparent !important;
+  }
+  table.print-grid thead th { background: #e5e5e5 !important; font-weight: 700; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  table.print-grid .no-print, table.print-grid .print\:hidden { display: none !important; }
+}
+
+/* Impressão: só o documento principal (#printable-area), sem interface nem folhas em branco */
+@media print {
+  body * { visibility: hidden; }
+  #printable-area, #printable-area * { visibility: visible; }
+  #printable-area { position: absolute; left: 0; top: 0; width: 100%; margin: 0 !important; box-shadow: none !important; border: none !important; }
+  html, body { height: auto !important; overflow: visible !important; }
+  main { overflow: visible !important; }
+  .no-print { display: none !important; }
+}
+
+/* Cores das notas (pauta e boletim) — também na impressão */
+.nota-verde, .nota-vermelha, .media-final { font-weight: 700; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+.nota-verde { color: hsl(var(--success)) !important; }
+.nota-vermelha { color: hsl(var(--destructive)) !important; }
+.media-final { background-color: hsl(var(--warning) / 0.45) !important; }
+.resultado-ok { background-color: hsl(var(--success) / 0.75) !important; color: hsl(var(--success-foreground, 0 0% 100%)) !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+.resultado-mal { background-color: hsl(var(--destructive) / 0.2) !important; color: hsl(var(--destructive)) !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+/* Insígnia nítida e a cores ao imprimir / baixar */
+img.insignia { image-rendering: auto; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; filter: none !important; }
